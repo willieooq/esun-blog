@@ -64,4 +64,4 @@
 
 ### - [ ] 需防止 SQL Injection 以及 XSS 攻擊。
 
-> 時間上來不及
+> 透過直接使用 mybatis 的套件有提供防止 sqlinjection 的方法，xss 時間上來不及
