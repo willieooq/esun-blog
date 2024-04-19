@@ -59,9 +59,9 @@ public class PostController {
         return success > 0 ? Result.ok() : Result.failure();
     }
 
-    @GetMapping("/listAllPosts")
-    public Result listAllPostsbyId(int userId) {
-        List<Post> posts = postsMapper.getAllPosts(userId);
+    @GetMapping("/getAllPosts")
+    public Result getAllPostsbyId() {
+        List<Post> posts = postsMapper.selectList(null);
         return !posts.isEmpty() ? Result.ok().data("posts", posts) : Result.failure();
     }
 

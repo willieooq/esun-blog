@@ -44,7 +44,7 @@ public class UserController {
             String token = JWTUtilies.generateAccessToken(Integer.parseInt(userId.getData().get("userId").toString()));
             return Result.ok().data("token", token);
         }
-        return Result.failure().data("message", "用戶名稱或密碼錯誤");
+        return Result.failure().message("用戶名稱或密碼錯誤");
     }
 
     @GetMapping("/info")
@@ -70,9 +70,11 @@ public class UserController {
     // 新增用戶
     @PostMapping("/register")
     public Result addUser(@RequestBody User user) {
-        return userService.registerService(user) ? Result.ok().data("message", "新增成功")
+        System.out.println(user.toString());
+        return userService.registerService(user) ? Result.ok().message(
+                "新增成功")
                 : Result.failure()
-                        .data("message", "此使用者已存在");
+                        .message("此使用者已存在").data("username", user.getUsername());
     }
 
 }

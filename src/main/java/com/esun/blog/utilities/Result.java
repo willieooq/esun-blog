@@ -62,4 +62,9 @@ public class Result {
         this.data.putAll(map);
         return this;
     }
+
+    public Result message(String message) {
+        this.message = message;
+        return this;
+    }
 }
