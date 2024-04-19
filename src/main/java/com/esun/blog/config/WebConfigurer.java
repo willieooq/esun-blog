@@ -6,13 +6,16 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.esun.blog.utilities.LoginInterceptor;
+import com.esun.blog.utilities.TokenInterceptor;
 
 @Configuration
 public class WebConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(@NonNull InterceptorRegistry registry) {
-        registry.addInterceptor((HandlerInterceptor) new LoginInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor((HandlerInterceptor) new TokenInterceptor())
+                .addPathPatterns("/user/**")
+                .excludePathPatterns("/user/register", "/user/login");
+
     }
 }

@@ -12,15 +12,15 @@ import lombok.Data;
 public class Post {
 
     @TableId(type = IdType.AUTO)
-    int postId;
+    Integer postId;
 
-    int userId;
+    Integer userId;
 
     String content;
 
     String image;
 
-    LocalDateTime createAt;
+    LocalDateTime createdAt;
 
     @Override
     public String toString() {
@@ -29,7 +29,7 @@ public class Post {
                 ", userId=" + userId +
                 ", content='" + content + '\'' +
                 ", image='" + image + '\'' +
-                ", createAt=" + createAt.toString() +
+                ", createAt=" + createdAt.toString() +
                 '}';
     }
 }

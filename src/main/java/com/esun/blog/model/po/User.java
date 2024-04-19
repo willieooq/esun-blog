@@ -14,7 +14,7 @@ import lombok.Data;
 public class User {
 
     @TableId(type = IdType.AUTO)
-    private int userId;
+    private Integer userId;
     // 名稱
     private String username;
     // email
@@ -34,7 +34,4 @@ public class User {
                 + coverImage
                 + ", biography=" + biography + "]";
     }
-
-    @TableField(exist = false)
-    private List<Post> posts;
 }

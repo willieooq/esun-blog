@@ -13,19 +13,19 @@ import lombok.Data;
 public class Comment {
 
     @TableId(type = IdType.AUTO)
-    private int commentId;
+    private Integer commentId;
 
-    private int userId;
+    private Integer userId;
 
-    private int postId;
+    private Integer postId;
 
     private String content;
 
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     @Override
     public String toString() {
         return "Comment [commentID=" + commentId + ", userID=" + userId + ", postID=" + postId + ", content=" + content
-                + ", createAt=" + createAt + "]";
+                + ", createAt=" + createdAt + "]";
     }
 }
